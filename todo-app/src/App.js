@@ -16,11 +16,11 @@ function App() {
 
     return ( 
         <div className="App">
-            <h1>Hello World!!</h1>
+            <h1>Hello Budding Programmers xD</h1>
             {/* encapsuling in form and adding type submit allows us to use enter to submit todo*/}
             <form>   
                 <FormControl>
-                    <InputLabel>Write a todos</InputLabel>
+                    <InputLabel>Write a todo</InputLabel>
                     <Input value={input} onChange={event => setInput(event.target.value)}/>
                 </FormControl>
 
@@ -32,7 +32,7 @@ function App() {
 
             <ul>
                 {todos.map(todo => (
-                    <Todo text={todo}/>
+                    <Todo text={todo}/>   //breaked code into components
                 ))}
             </ul>
         </div>
