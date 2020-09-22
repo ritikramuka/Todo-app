@@ -16,7 +16,7 @@ function App() {
     useEffect(() => {
         //this code.... fires when app.js loads
         db.collection('todos').orderBy('timestamp', 'desc').onSnapshot( snapshot => {
-            setTodos(snapshot.docs.map(doc => doc.data().todo))
+            setTodos(snapshot.docs.map(doc => ({id: doc.id, todo: doc.data().todo})))
         })
     }, [] /*this blank array means only runs once when app loads*/ ); 
 
@@ -51,7 +51,7 @@ function App() {
 
             <ul>
                 {todos.map(todo => (
-                    <Todo text={todo}/>   //breaked code into components
+                    <Todo todo={todo}/>   //breaked code into components
                 ))}
             </ul>
         </div>
